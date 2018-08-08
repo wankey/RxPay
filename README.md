@@ -1,9 +1,9 @@
  [![Download](https://api.bintray.com/packages/wankey/maven/pay/images/download.svg) ](https://bintray.com/wankey/maven/pay/_latestVersion)
 
-#RxPay
+# RxPay
 使用RxJava代码风格的支付lib，支持支付宝和微信支付
 
-##使用方式
+## 使用方式
 1. 添加repository<br>
 maven { url "https://dl.bintray.com/wankey/maven/" }<br>
 2. 添加依赖<br>
