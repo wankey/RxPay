@@ -1,0 +1,62 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+versioning {
+    // required (number)
+    major = 1
+    minor = 0
+    // force patch, optional (number)
+    patch = 2
+    dependsOn = "install"
+    // optional (any string)
+    preRelease = 'SNAPSHOT'
+}
+
+ext {
+    // Library Settings
+    libraryDescription = "a rx stream library provider ability to pay money with popular tool in China"
+    libraryLabels = ['android', 'pay', 'wxpay', 'alipay', '微信支付', '支付宝', 'kotlin', 'rxJava']
+    bintrayName = "pay"
+    libraryName = bintrayName
+    artifact = bintrayName
+}
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion  14
+        targetSdkVersion  28
+        versionCode versioning.code
+        versionName versioning.name
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation "io.reactivex.rxjava2:rxjava:2.2.0"
+
+    compileOnly fileTree(dir: 'libs', include: ['*.jar'])
+    compileOnly 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:5.1.4'
+
+}
+
+apply from: '../script/maven-install.gradle'
+apply from: '../script/maven-publish.gradle'
+apply from: '../script/jfrog-bintray-publish.gradle'

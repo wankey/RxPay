@@ -1,0 +1,33 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="io.github.wankey.mithril.pay">
+
+  <application>
+    <activity
+        android:name=".WXPayEntryActivity"
+        android:configChanges="keyboardHidden|orientation|screenSize"
+        android:exported="true"
+        android:launchMode="singleInstance"
+        android:screenOrientation="portrait"
+        android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+
+    <activity
+        android:name="com.alipay.sdk.app.H5PayActivity"
+        android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+        android:exported="false"
+        android:screenOrientation="behind"
+        android:windowSoftInputMode="adjustResize|stateHidden"/>
+
+    <activity
+        android:name="com.alipay.sdk.app.H5AuthActivity"
+        android:configChanges="orientation|keyboardHidden|navigation"
+        android:exported="false"
+        android:screenOrientation="behind"
+        android:windowSoftInputMode="adjustResize|stateHidden"/>
+
+    <activity-alias
+        android:name="${applicationId}.wxapi.WXPayEntryActivity"
+        android:exported="true"
+        android:targetActivity="io.github.wankey.mithril.pay.WXPayEntryActivity"/>
+
+  </application>
+</manifest>
