@@ -57,6 +57,6 @@ dependencies {
 
 }
 
-apply from: '../script/maven-install.gradle'
-apply from: '../script/maven-publish.gradle'
-apply from: '../script/jfrog-bintray-publish.gradle'
+apply from: 'https://raw.githubusercontent.com/wankey/Script/master/maven-install.gradle'
+apply from: 'https://raw.githubusercontent.com/wankey/Script/master/maven-publish.gradle'
+apply from: 'https://raw.githubusercontent.com/wankey/Script/master/jfrog-bintray-publish.gradle'
